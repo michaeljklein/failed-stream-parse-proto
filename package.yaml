@@ -1,0 +1,52 @@
+name:                failed-stream-parse-proto
+version:             0.1.0.0
+github:              "michaeljklein/failed-stream-parse-proto"
+license:             BSD3
+author:              "Michael Klein"
+maintainer:          "lambdamichael@gmail.com"
+copyright:           "2018 Michael Klein"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/michaeljklein/failed-stream-parse-proto#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- comonad
+- free
+- transformers
+
+library:
+  source-dirs: src
+
+executables:
+  failed-stream-parse-proto-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - failed-stream-parse-proto
+
+tests:
+  failed-stream-parse-proto-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - failed-stream-parse-proto

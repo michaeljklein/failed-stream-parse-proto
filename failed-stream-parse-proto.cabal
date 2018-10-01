@@ -1,0 +1,73 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 12676b2a1e6cdd4ad63153fae2b3125e0d8ad61459ee4c4847eb00a0ed0f984c
+
+name:           failed-stream-parse-proto
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/michaeljklein/failed-stream-parse-proto#readme>
+homepage:       https://github.com/michaeljklein/failed-stream-parse-proto#readme
+bug-reports:    https://github.com/michaeljklein/failed-stream-parse-proto/issues
+author:         Michael Klein
+maintainer:     lambdamichael@gmail.com
+copyright:      2018 Michael Klein
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/michaeljklein/failed-stream-parse-proto
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_failed_stream_parse_proto
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , comonad
+    , free
+    , text
+    , transformers
+  default-language: Haskell2010
+
+executable failed-stream-parse-proto-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_failed_stream_parse_proto
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , comonad
+    , failed-stream-parse-proto
+    , free
+    , text
+    , transformers
+  default-language: Haskell2010
+
+test-suite failed-stream-parse-proto-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_failed_stream_parse_proto
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , comonad
+    , failed-stream-parse-proto
+    , free
+    , text
+    , transformers
+  default-language: Haskell2010
